@@ -4,6 +4,9 @@ import Layout from "@components/Layout"; // Layout wrapper
 import { defaultBags } from "@utils/constants"; // Bags to render
 import styles from "@styles/pages/Home.module.scss"; // Styles
 
+// Constants
+const contract = '0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7';
+
 // Types
 import type { ReactElement } from "react";
 
@@ -11,15 +14,22 @@ export default function Home(): ReactElement {
   // Quicklinks to render
   // TODO: Update OpenSea and Contract links
   const quicklinks: Record<string, string>[] = [
-    { name: "OpenSea", url: "https://opensea.io/collection/weedloot" },
+    // { 
+    //   name: "OpenSea", 
+    //   url: "https://opensea.io/collection/weedloot" 
+    // },
     {
       name: "Twitter",
       url: "https://twitter.com/weed_loot",
     },
     {
-      name: "Contract",
-      url: "https://etherscan.io/address/0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7",
+      name: "Discord",
+      url: "https://t.co/Qdjr0rY9GY?amp=1",
     },
+    // {
+    //   name: "Contract",
+    //   url: `https://etherscan.io/address/${contract}`,
+    // },
   ];
 
   /**
@@ -70,20 +80,22 @@ export default function Home(): ReactElement {
             <p className={styles.home__cta_promo}>
               First <strong>420</strong> minted for <strong>.01Ξ</strong> before price change to <strong>.02Ξ</strong>
             </p>
-            <a href="#" className="button" title="Mint a piece of Weed Loot">
-              🔥 <span className="button_text">Mint</span> 🔥
-            </a>
+            <Link href="/mint">
+              <a className='button' title="Mint a piece of Weed Loot">
+                <span>🔥 <span className="button_text">Mint</span> 🔥</span>
+              </a>
+            </Link>
           </div>
         </div>
 
         {/* Rendering sample loot bags */}
-        <div className={styles.home__feature}>
+        {/* <div className={styles.home__feature}>
           <span>Example Bags:</span>
           {getRandomThreeBags().map(({ id, attributes }, i) => (
             // For each loot bag, render item and link to OpenSea
             // TODO: Update OpenSea link
             <a
-              href={`https://opensea.io/assets/0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7/${id}`}
+              href={`https://opensea.io/assets/${contract}/${id}`}
               target="_blank"
               rel="noopener noreferrer"
               key={i}
@@ -101,7 +113,7 @@ export default function Home(): ReactElement {
               </div>
             </a>
           ))}
-        </div>
+        </div> */}
 
         {/* Donations */}
         <div className={`container ${styles.home_description}`} id="charity">
