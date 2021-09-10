@@ -4,6 +4,9 @@ import Layout from "@components/Layout"; // Layout wrapper
 import { defaultBags } from "@utils/constants"; // Bags to render
 import styles from "@styles/pages/Home.module.scss"; // Styles
 
+// Constants
+const contract = '0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7';
+
 // Types
 import type { ReactElement } from "react";
 
@@ -22,7 +25,7 @@ export default function Home(): ReactElement {
     },
     {
       name: "Contract",
-      url: "https://etherscan.io/address/0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7",
+      url: `https://etherscan.io/address/${contract}`,
     },
   ];
 
@@ -87,7 +90,7 @@ export default function Home(): ReactElement {
             // For each loot bag, render item and link to OpenSea
             // TODO: Update OpenSea link
             <a
-              href={`https://opensea.io/assets/0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7/${id}`}
+              href={`https://opensea.io/assets/${contract}/${id}`}
               target="_blank"
               rel="noopener noreferrer"
               key={i}
