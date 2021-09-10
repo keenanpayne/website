@@ -6,7 +6,7 @@ import { ethers } from 'ethers'
 
 import Token from '../src/artifacts/contracts/WeedLoot.sol/WeedLoot.json'
 
-const TokenAddress = '0xE884e9fC6823c00F7f82369049529A5A5adc157e'
+const TokenAddress = '0xe884e9fc6823c00f7f82369049529a5a5adc157e'
 
 
   // Types
@@ -79,26 +79,29 @@ const TokenAddress = '0xE884e9fC6823c00F7f82369049529A5A5adc157e'
       }
 
     async function mintMyOwn() {
-          // const [account] = await requestAccount()
-          const provider = new ethers.providers.Web3Provider(window.ethereum);
-          const signer = provider.getSigner()
-          const contract = new ethers.Contract(TokenAddress, Token.abi, signer)
-          const res = await contract.costToMint()
+        if (typeof window.ethereum !== 'undefined') {
+            const [account] = await requestAccount()
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(TokenAddress, Token.abi, signer)
+            const res = await contract.costToMint()
 
-          const overrides = {
-            value: res.toString()
-          }
+            const overrides = {
+                value: res.toString()
+            }
 
-        //   // console.log(account)
-          await contract.claim(overrides)
+            await contract.claim(overrides)
+        }
     }
 
     async function mintAsOwner() {
-        // const [account] = await requestAccount()
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner()
-        const contract = new ethers.Contract(TokenAddress, Token.abi, signer)
-        await contract.ownerClaim()
+        if (typeof window.ethereum !== 'undefined') {
+            const [account] = await requestAccount()
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(TokenAddress, Token.abi, signer)
+            await contract.ownerClaim()
+        }
     }
 
     async function distribute() {
