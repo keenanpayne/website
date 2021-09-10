@@ -15,7 +15,6 @@ const TokenAddress = '0xE884e9fC6823c00F7f82369049529A5A5adc157e'
 
   export default function Admin() {
     const [costToMint, setCostToMint] = useState('')
-    const [totalSupply, setTotalSupply] = useState('')
     const [tokenImages, setTokenImages] = useState([''])
 
     async function requestAccount() {
@@ -41,15 +40,6 @@ const TokenAddress = '0xE884e9fC6823c00F7f82369049529A5A5adc157e'
 
         await contract.setCostToMint(amount)
         console.log('Cost Set!')
-      }
-
-      async function setSupply() {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner()
-        const contract = new ethers.Contract(TokenAddress, Token.abi, signer)
-
-        await contract.setTotalSupply(totalSupply)
-        console.log('Supply Set!')
       }
 
       async function getBalance() {
@@ -109,9 +99,7 @@ const TokenAddress = '0xE884e9fC6823c00F7f82369049529A5A5adc157e'
         const signer = provider.getSigner()
         const contract = new ethers.Contract(TokenAddress, Token.abi, signer)
         await contract.ownerClaim()
-
-       
-  }
+    }
 
     async function distribute() {
         // const amount = ethers.utils.parseEther(withdrawAmount).toString()
