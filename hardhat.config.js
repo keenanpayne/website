@@ -44,8 +44,8 @@ module.exports = {
     live: {
       url: `https://eth-mainnet.alchemyapi.io/v2/${alchemyApiKeyProd}`,
       accounts: [privateKey],
-      gas: gas,
-      gasPrice: gasPrice, 
+      // gas: gas,
+      // gasPrice: gasPrice, 
     }
   }
 };

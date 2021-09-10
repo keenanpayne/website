@@ -5,7 +5,7 @@ import Layout from "@components/Layout"; // Layout wrapper
 import { ethers } from 'ethers'
 
 import Token from '../src/artifacts/contracts/WeedLoot.sol/WeedLoot.json'
-const TokenAddress = '0xE884e9fC6823c00F7f82369049529A5A5adc157e'
+const TokenAddress = '0xe884e9fc6823c00f7f82369049529a5a5adc157e'
 
 // Types
 import { useState } from "react";
