@@ -17,6 +17,10 @@ export default function Home(): ReactElement {
       url: "https://twitter.com/weed_loot",
     },
     {
+      name: "Discord",
+      url: "https://t.co/Qdjr0rY9GY?amp=1",
+    },
+    {
       name: "Contract",
       url: "https://etherscan.io/address/0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7",
     },
@@ -70,7 +74,7 @@ export default function Home(): ReactElement {
             <p className={styles.home__cta_promo}>
               First <strong>420</strong> minted for <strong>.01Ξ</strong> before price change to <strong>.02Ξ</strong>
             </p>
-            <a href="#" className="button" title="Mint a piece of Weed Loot">
+            <a href="/mint" className="button" title="Mint a piece of Weed Loot">
               🔥 <span className="button_text">Mint</span> 🔥
             </a>
           </div>

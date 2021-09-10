@@ -30,7 +30,7 @@
 
   ul {
     list-style-type: none;
-    margin: 1.5rem auto 3rem auto;
+    margin: 1.5rem auto 2.5rem auto;
     padding: 0px;
 
     li {
@@ -66,8 +66,10 @@
   margin: 15px;
   color: var(--color-mid-green);
   transition: transform 300ms ease-in-out;
+  text-decoration: none;
 
   &:hover {
+    color: var(--color-mid-green);
     transform: translateY(-8px);
     text-decoration: none;
   }
