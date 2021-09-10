@@ -11,27 +11,6 @@ const contract = '0xff9c1b15b16263c61d017ee9f65c50e4ae0113d7';
 import type { ReactElement } from "react";
 
 export default function Home(): ReactElement {
-  // Quicklinks to render
-  // TODO: Update OpenSea and Contract links
-  const quicklinks: Record<string, string>[] = [
-    // { 
-    //   name: "OpenSea", 
-    //   url: "https://opensea.io/collection/weedloot" 
-    // },
-    {
-      name: "Twitter",
-      url: "https://twitter.com/weed_loot",
-    },
-    {
-      name: "Discord",
-      url: "https://t.co/Qdjr0rY9GY?amp=1",
-    },
-    // {
-    //   name: "Contract",
-    //   url: `https://etherscan.io/address/${contract}`,
-    // },
-  ];
-
   /**
    * Selects 3 random bags from defaultBags
    * @returns {Record<string, string>[]} randomized bags
@@ -47,27 +26,6 @@ export default function Home(): ReactElement {
         <div className={styles.home__cta}>
           {/* CTA title */}
           <h1>Weed Loot <small>(for Adventurers)</small></h1>
-
-          {/* Quicklinks */}
-          <ul>
-            {quicklinks.map(({ name, url }, i) => {
-              return (
-                <li key={i}>
-                  {url.startsWith("/") ? (
-                    // If link to local page use Link
-                    <Link href={url}>
-                      <a>{name}</a>
-                    </Link>
-                  ) : (
-                    // Else, redirect in new tab
-                    <a href={url} target="_blank" rel="noopener noreferrer">
-                      {name}
-                    </a>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
 
           {/* Project Description */}
           <p>Weed Loot is randomized adventurer gear generated and smoked on chain. Stats, Images, and other functionality are intentionally omitted for others to interpret. Feel free to use Weed Loot in any way you want.</p>

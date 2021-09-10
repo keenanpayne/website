@@ -91,8 +91,22 @@ function Header() {
   const { pathname } = useRouter();
   // All links
   const links = [
-    { name: "FAQ", path: "/faq" },
-    { name: "Resources", path: "/resources" },
+    { 
+      name: "OpenSea", 
+      path: "https://opensea.io/collection/weed-loot-for-adventurers" 
+    },
+    {
+      name: "Twitter",
+      path: "https://twitter.com/weed_loot",
+    },
+    {
+      name: "Discord",
+      path: "https://t.co/Qdjr0rY9GY?amp=1",
+    },
+    {
+      name: "Contract",
+      path: `https://etherscan.io/address/0xe884e9fc6823c00f7f82369049529a5a5adc157e`,
+    },
   ];
 
   return (
@@ -106,7 +120,7 @@ function Header() {
 
       {/* Navigation */}
       <div className={styles.header__links}>
-        {/* <ul>
+        <ul>
           {links.map(({ name, path }, i) => {
             // For each link, render link
             return (
@@ -126,7 +140,7 @@ function Header() {
               </li>
             );
           })}
-        </ul> */}
+        </ul>
       </div>
     </div>
   );
