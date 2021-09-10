@@ -14,7 +14,10 @@ export default function Home(): ReactElement {
   // Quicklinks to render
   // TODO: Update OpenSea and Contract links
   const quicklinks: Record<string, string>[] = [
-    { name: "OpenSea", url: "https://opensea.io/collection/weedloot" },
+    // { 
+    //   name: "OpenSea", 
+    //   url: "https://opensea.io/collection/weedloot" 
+    // },
     {
       name: "Twitter",
       url: "https://twitter.com/weed_loot",
@@ -23,10 +26,10 @@ export default function Home(): ReactElement {
       name: "Discord",
       url: "https://t.co/Qdjr0rY9GY?amp=1",
     },
-    {
-      name: "Contract",
-      url: `https://etherscan.io/address/${contract}`,
-    },
+    // {
+    //   name: "Contract",
+    //   url: `https://etherscan.io/address/${contract}`,
+    // },
   ];
 
   /**
@@ -86,7 +89,7 @@ export default function Home(): ReactElement {
         </div>
 
         {/* Rendering sample loot bags */}
-        <div className={styles.home__feature}>
+        {/* <div className={styles.home__feature}>
           <span>Example Bags:</span>
           {getRandomThreeBags().map(({ id, attributes }, i) => (
             // For each loot bag, render item and link to OpenSea
@@ -110,7 +113,7 @@ export default function Home(): ReactElement {
               </div>
             </a>
           ))}
-        </div>
+        </div> */}
 
         {/* Donations */}
         <div className={`container ${styles.home_description}`} id="charity">
