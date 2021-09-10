@@ -78,6 +78,9 @@ function Head(): ReactElement {
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap"
         rel="stylesheet"
       />
+
+      {/* Fathom Analytics */}
+      <script src="https://cdn.usefathom.com/script.js" data-site="NZOWGMXX" defer></script>
     </HTMLHead>
   );
 }
