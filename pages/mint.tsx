@@ -52,18 +52,20 @@ export default function Admin() {
     }
 
     async function mintMyOwn() {
-            // const [account] = await requestAccount()
+        if (typeof window.ethereum !== 'undefined') {
+            const [account] = await requestAccount()
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner()
             const contract = new ethers.Contract(TokenAddress, Token.abi, signer)
             const res = await contract.costToMint()
 
             const overrides = {
-            value: res.toString()
+                value: res.toString()
             }
 
-        //   // console.log(account)
             await contract.claim(overrides)
+
+        }
     }
 
     return (
